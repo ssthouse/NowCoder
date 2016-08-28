@@ -30,7 +30,9 @@ public class Main {
                     }else{
                         return o1.length - o2.length;
                     }
+
                 }
+
             });
             //遍历直到整个List处理结束
             for (int i = 0; i < beanList.size(); i++) {
