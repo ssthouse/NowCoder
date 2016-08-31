@@ -1,4 +1,4 @@
-package LookingForJob;
+package LookingForOffer._4_替换空格;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package LookingForJob._5.从尾到头打印链表;
+package LookingForOffer._5_从尾到头打印链表;
 
 import java.util.Stack;
 
