@@ -20,9 +20,14 @@ public class Main {
         }
         List<String> allPermutationStr = new ArrayList<>();
         fullPermutation(allPermutationStr, strList, new StringBuilder());
+
+        //计算结果为k的 str数量
+        int result = 0;
         for (String str : allPermutationStr) {
-            System.out.println(str);
+            if (getWeight(str) == k)
+                result++;
         }
+        System.out.println(result);
     }
 
     public static void fullPermutation(List<String> resultList, List<String> strList, StringBuilder curSb) {
@@ -43,16 +48,16 @@ public class Main {
         }
     }
 
-    public static int getWeight(String string) {
-        int weight;
+    public static int getWeight(String str) {
+        int count = 0;
         String tempStr;
-        for (int i = 0; i < string.length(); i++) {
-//            tempStr = tempStCr.substring(1, tempStr.length());
+        for (int i = 1; i <= str.length(); i++) {
+            tempStr = str.substring(i, str.length()) + str.substring(0, i);
+            if (tempStr.equals(str)) {
+                count++;
+            }
         }
-
-        List list = new ArrayList<>();
-        Set set = new HashSet<>();
-        return 1;
+        return count;
     }
 
 }
