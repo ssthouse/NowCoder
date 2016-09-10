@@ -31,7 +31,10 @@ public class Main {
      * 类似于动态规划实现
      */
     public int getResult(int n) {
-        int tempResult[] = new int[n+1];
+        if (n < 2) {
+            return n;
+        }
+        int tempResult[] = new int[n + 1];
         tempResult[0] = 0;
         tempResult[1] = 1;
         for (int i = 2; i <= n; i++) {
@@ -40,13 +43,28 @@ public class Main {
         return tempResult[n];
     }
 
+    public int getResult2(int n) {
+        if (n < 2)
+            return n;
+        int fist = 0;
+        int sec = 1;
+        int tempResult = 0;
+        for (int i = 2; i <= n; i++) {
+            tempResult = fist + sec;
+            fist = sec;
+            sec = tempResult;
+        }
+        return tempResult;
+    }
 
     public static void main(String[] args) {
         Main main = new Main();
         int result = main.recursiveSolution(10);
         int result1 = main.getResult(10);
+        int result2 = main.getResult2(10);
         Utils.log(result);
         Utils.log(result1);
+        Utils.log(result2);
     }
 
 }
