@@ -33,4 +33,8 @@ public class Utils {
             System.out.print(tempNode.value+" ");
         }
     }
+
+    public static void log(Object msg) {
+        System.out.println(msg);
+    }
 }
