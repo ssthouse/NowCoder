@@ -10,6 +10,6 @@ public class Main {
     }
 
     public static int getResult(int[] array) {
-
+        return 1;
     }
 }
