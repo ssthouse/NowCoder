@@ -34,7 +34,15 @@ public class Utils {
         }
     }
 
+    public static void printNodeList(Node headNode) {
+        while (headNode != null) {
+            System.out.println(headNode.value);
+            headNode = headNode.nextNode;
+        }
+    }
+
     public static void log(Object msg) {
         System.out.println(msg);
     }
+
 }
