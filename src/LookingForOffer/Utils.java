@@ -41,6 +41,16 @@ public class Utils {
         }
     }
 
+    public static Node generateTenNode() {
+        Node headNode = new Node(1, null);
+        Node tempNode = headNode;
+        for (int i = 2; i <= 10; i++) {
+            tempNode.nextNode = new Node(i, null);
+            tempNode = tempNode.nextNode;
+        }
+        return headNode;
+    }
+
     public static void log(Object msg) {
         System.out.println(msg);
     }
