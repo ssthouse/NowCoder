@@ -34,14 +34,42 @@ public class Main {
         tempNode.nextNode = null;
         return headNode;
     }
+
+    public Node reverseIterate(Node node) {
+        Node preNode = null;
+        Node nextNode = null;
+        while (node != null) {
+//            Utils.log(node.value+"   ");
+            nextNode = node.nextNode;
+            node.nextNode = preNode;
+            //迭代下一个节点
+            preNode = node;
+            node = nextNode;
+        }
+        return preNode;
+    }
+
+    public Node reverseRecursive(Node node) {
+        return null;
+    }
+
     
     public static void main(String[] args) {
         Main main = new Main();
-        //生成测试数据
+        //result One
         Node headNode = Utils.generateTenNode();
-        //得到新的头结点
         Node newHead = main.reverse(headNode);
-        //打印结果
         Utils.printNodeList(newHead);
+        Utils.printLine("*");
+        //result Two
+        headNode = Utils.generateTenNode();
+        Node reverseIterateHead = main.reverseIterate(headNode);
+        Utils.printNodeList(reverseIterateHead);
+        Utils.printLine("*");
+        //result Three
+        headNode = Utils.generateTenNode();
+        Node reverseRecursiveHean = main.reverseRecursive(headNode);
+        Utils.printNodeList(reverseRecursiveHean);
+        Utils.printLine("*");
     }
 }

@@ -8,6 +8,13 @@ import java.util.Queue;
  */
 public class Utils {
 
+    public static void printLine(String string) {
+        for (int i = 0; i < 100; i++) {
+            System.out.print(string);
+        }
+        System.out.println();
+    }
+
     public static void printBinaryTreeByRow(BinaryNode head) {
         if (head == null) {
             return;
@@ -26,11 +33,11 @@ public class Utils {
                     continue;
                 }
             }
-            if(tempNode.leftNode != null)
+            if (tempNode.leftNode != null)
                 queue.add(tempNode.leftNode);
-            if(tempNode.rightNode != null)
+            if (tempNode.rightNode != null)
                 queue.add(tempNode.rightNode);
-            System.out.print(tempNode.value+" ");
+            System.out.print(tempNode.value + " ");
         }
     }
 
