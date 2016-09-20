@@ -49,8 +49,21 @@ public class Main {
         return preNode;
     }
 
+    /**
+     * TODO
+     * 递归  传递一个参数的实现
+     * @param node
+     * @return
+     */
     public Node reverseRecursive(Node node) {
-        return null;
+        if (node.nextNode == null) {
+            return node;
+        }
+        Node nextNode = node.nextNode;
+        Node resultNode = reverseRecursive(node.nextNode);
+
+
+        return resultNode;
     }
 
     
@@ -68,8 +81,8 @@ public class Main {
         Utils.printLine("*");
         //result Three
         headNode = Utils.generateTenNode();
-        Node reverseRecursiveHean = main.reverseRecursive(headNode);
-        Utils.printNodeList(reverseRecursiveHean);
+        Node reverseRecursiveHead = main.reverseRecursive(headNode);
+        Utils.printNodeList(reverseRecursiveHead);
         Utils.printLine("*");
     }
 }
