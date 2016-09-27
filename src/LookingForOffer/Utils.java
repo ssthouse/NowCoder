@@ -15,14 +15,25 @@ public class Utils {
         System.out.println();
     }
 
-//    public static void getOddNoede() {
-//        Node headNode = new Node(0, null);
-//        Node tempNode = headNode;
-//        for (int i = 0; i < 5; i++) {
-//            tempNode.nextNode = new Node(i * 2 + 1, null);
-//            tempNode.
-//        }
-//    }
+    public static Node generateOddNode() {
+        Node headNode = new Node(0, null);
+        Node tempNode = headNode;
+        for (int i = 0; i < 5; i++) {
+            tempNode.nextNode = new Node(i * 2 + 1, null);
+            tempNode = tempNode.nextNode;
+        }
+        return headNode.nextNode;
+    }
+
+    public static Node generateEvenNode() {
+        Node headNode = new Node(0, null);
+        Node tempNode = headNode;
+        for (int i = 0; i < 5; i++) {
+            tempNode.nextNode = new Node(i * 2, null);
+            tempNode = tempNode.nextNode;
+        }
+        return headNode.nextNode;
+    }
 
     public static void printBinaryTreeByRow(BinaryNode head) {
         if (head == null) {
